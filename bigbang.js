@@ -6,25 +6,28 @@ template.innerHTML = `
     /* @import url(); */
    
     div {
-      /*border: 1px solid red; */
+      border: 1px solid red;
       padding: 3rem;
       margin: 3rem;
     }
+
+    button {
+      background-color:red;
+    }
+
     :host{
       /* for the shadow root */
       background-color: lavender;
       display: block;
     }
-    :host(big-bang){
+    :host(button){
       background-color: cornflowerblue;
     }
     :host-context(main){
       background-color: gold;
     }
-    ::slotted(h2){
-      font-size: 4rem;
-      color: black !important;
-    }
+   
+    
     slot{
       /* No work! */
     }
@@ -34,10 +37,14 @@ template.innerHTML = `
     h1{
       color: orangered;
     }
+    button{
+      background-color:blue;
+    }
   </style>
   <div>
     <h1 part="topper">Big Bang Theory</h1>
-    <slot name="title">Default text if not title slot used in HTML</slot>
+    <slot name="auth">Default text if not title slot used in HTML</slot>
+    <button id='james'>James<button>
   </div>
 `;
 
