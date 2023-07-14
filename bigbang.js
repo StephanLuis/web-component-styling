@@ -37,22 +37,20 @@ template.innerHTML = `
     h1{
       color: orangered;
     }
-    button{
-      background-color:blue;
-    }
+    
   </style>
-  <div>
-    <h1 part="topper">Big Bang Theory</h1>
-    <slot name="auth">Default text if not title slot used in HTML</slot>
-    <button id='james'>James<button>
-  </div>
+  
+    
+    <div class="pmlinkbuilder"></div> 
+      <script type="module" src="https://cdn.jsdelivr.net/npm/practisemaster@develop/nonobfs/PMbundle.js"></script>
+  
 `;
 
 class BigBang extends HTMLElement {
   constructor() {
     super();
-    const shadowRoot = this.attachShadow({ mode: 'closed' });
-    let clone = template.content.cloneNode(true);
+    const shadowRoot = this.attachShadow({ mode: 'open' });
+  let clone = template.content.cloneNode(true);
     shadowRoot.append(clone);
   }
 }
